@@ -1,4 +1,5 @@
 n = int(input())
+cycles = {1, 0, -1, -5, -17}
 
 def even(n):
     n /= 2
@@ -18,10 +19,10 @@ def collatz(n):
 
 def main(n):
     iterations = 0
-    while n != 1:
+    while n not in cycles:
         iterations += 1
         n = collatz(n)
         print(n)
-    print(f"1 was reached after {iterations} iterations")
+    print(f"Loop was reached after {iterations} iterations")
 
 main(n)
